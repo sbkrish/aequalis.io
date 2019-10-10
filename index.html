@@ -535,7 +535,7 @@
 										<aside class="video-table-cell">
 											<aside class="aqls-video-wrap">
 												<a href="javascript:;" class="video-close">X</a>
-												<video controls>
+												<video controlsList="nodownload">
 												  <source src="images/aequalis.mp4" type="video/mp4">
 												  <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
 												  Your browser does not support HTML5 video.
@@ -674,7 +674,7 @@
 											</svg></a>
 									</li>
 								</ul>
-								<h3>&copy; 2010-2019 Aequalisys. All rights reserved.</h3>
+								<h3>&copy; 2010-2019 Aequalis. All rights reserved.</h3>
 							</section>
 							<section class="right-block">
 								<section class="aqls-cntus-table">
@@ -730,6 +730,30 @@
 <script>
 jQuery(function()
 {
+	left = 37,up = 38, right = 39,down = 40
+
+	$(document).keydown(function(e) {
+	switch(e.which) {
+		case 37:
+			$(".aqls-slick-slider-int").slick('slickPrev');
+		break;
+
+		case 38:
+			$(".aqls-slick-slider-int").slick('slickPrev');
+		break;
+
+		case 39:
+			$(".aqls-slick-slider-int").slick('slickNext');
+		break;
+
+		case 40:
+			$(".aqls-slick-slider-int").slick('slickNext');
+		break;
+
+		default: return;
+	}
+	})
+	//e.preventDefault();
 	//burger menu open
 	jQuery('header .aqls-hdr-menu .burger-menu-block,header .aqls-burger-menu-nav .aqls-nav-block .top-nav li a,header .aqls-burger-menu-nav .aqls-nav-block .nav-social-media-block li a').on('click',function()
 	{
